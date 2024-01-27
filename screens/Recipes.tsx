@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import {
+  Alert,
   Button,
   Text,
   TextInput,
@@ -19,11 +20,11 @@ type RootStackParamList = {
 type Props = NativeStackScreenProps<RootStackParamList>
 
 function submitRecipe(recipe: String) {
-  axios.post('http://localhost:5000/api/v1/recipes', { name: 'chicken orzo', url: recipe })
+  return axios.post('http://localhost:5000/api/v1/recipes', { name: 'chicken orzo', url: recipe })
   .then(res => { 
-    console.log("success")
+    Alert.alert("Recipe saved");
   }).catch(err => {
-    console.log(err.response.data.message)
+    Alert.alert(err.response.data.message);
   })
 };
 
