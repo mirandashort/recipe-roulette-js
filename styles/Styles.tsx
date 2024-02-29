@@ -13,5 +13,11 @@ export default StyleSheet.create({
     marginTop: 50,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+
+  textContainer: {
+    marginTop: 20,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
